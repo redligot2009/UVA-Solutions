@@ -1,7 +1,8 @@
 #include <bits/stdc++.h>
 
 using namespace std;
-
+//Author: Red Ligot, 3/20/2017
+//Solution got 217th place
 class Graph{
     public:
     int _graph[2000][2000];
@@ -26,7 +27,6 @@ void Graph::clear()
 }
 
 int main() {
-	// your code goes here
 	Graph myGraph, myGraph2;
     int dirX[4] = {1, 0, -1, 0};
     int dirY[4] = {0, 1, 0, -1};
@@ -45,22 +45,27 @@ int main() {
 	    for(int i = 0; i < p; i ++)
 	    {
 	        cin >> a >> s;
+			//add edge to mall 1
 	        myGraph.addEdge(a, s);
+			//add edge to queue
 	        q.push(pair<int,int>(a,s));
 	    }
 	    cin >> p;
 	    for(int i = 0; i < p; i ++)
 	    {
 	        cin >> a >> s;
+			//add edge to mall 2
 	        myGraph2.addEdge(a, s);
 	    }
 	    int minDist = 100000;
 	    bool found = false;
+		//BFS
 	    while(!q.empty())
 	    {
 	        pair<int,int> u = q.front();
 	        int distance = dist[u.first][u.second];
 	        q.pop();
+			//check for children on four sides
 	        for(int i = 0; i < 4; i ++)
 	        {
 	            int nx = u.first + dirX[i];
@@ -71,6 +76,7 @@ int main() {
 	            }
 	            if(myGraph2._graph[nx][ny] == 1)
 	            {
+					//closest path to mall 2 found
 	                found = true;
 	                break;
 	            }
@@ -80,6 +86,7 @@ int main() {
 	        }
 	        if(found)
 	        {
+				//print distance
 	            cout << distance + 1 << endl;
 	            break;
 	        }
