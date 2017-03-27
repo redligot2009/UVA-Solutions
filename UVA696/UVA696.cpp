@@ -1,10 +1,10 @@
 #include <iostream>
 #include <cmath>
 using namespace std;
+//Red Ligot 3/27/2017 ranked #323
 int solve(int m, int n)
 {
     int sum = 0;
-    
     if(n > m)
     {
         swap(m,n);
@@ -30,12 +30,10 @@ int solve(int m, int n)
         {
             sum += halfCol * m;
         }
-        //cout << "yo ";
     }
     else if(m <= 2 || n == 1 || m == 1)
     {
         sum = m * n;
-        //cout << "yo trappa ";
     }
     else if(n == 2)
     {
@@ -51,12 +49,10 @@ int solve(int m, int n)
         {
             sum += m;
         }
-       // cout << "yo2 ";
     }
     return sum;
 }
 int main() {
-	// your code goes here
 	int m, n;
 	while(cin >> m >> n)
 	{
