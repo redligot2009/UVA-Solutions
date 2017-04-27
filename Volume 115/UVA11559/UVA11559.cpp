@@ -1,14 +1,11 @@
-#include <iostream>
-#include <climits>
-#include <algorithm>
-#include <vector>
+#include <bits/stdc++.h>
 using namespace std;
 
 int main() {
 	int N, H, W, p;
 	long long B, minPrice;
 	//UVA 11559 Red Ligot 3/22/2017, Rank #2736
-	while(cin >> N >> B >> H >> W)
+	while(scanf("%d %lld %d %d", &N, &B, &H, &W) == 4)
 	{
 		minPrice = LONG_MAX;
 		long long prices[18] = {0};
@@ -16,12 +13,12 @@ int main() {
 		for(int i = 0; i < H; i ++)
 		{
 			int price;
-			cin >> price;
+			scanf("%d",&price);
 			prices[i] = price;
 			for(int j = 0; j < W; j ++)
 			{
 				int a;
-				cin >> a;
+				scanf("%d",&a);
 				amount[i] += a * price;
 			}
 		}
@@ -53,11 +50,11 @@ int main() {
 		}
 		if(minPrice != LONG_MAX)
 		{
-			cout << minPrice << endl;
+			printf("%d\n", minPrice);
 		}
 		else
 		{
-			cout << "stay home" << endl;
+			printf("stay home\n");
 		}
 	}
 	return 0;
