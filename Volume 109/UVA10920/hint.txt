@@ -1,0 +1,1 @@
+Notice that the top right corner of each ring is (i+2) * (i+2)
