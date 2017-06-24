@@ -104,7 +104,7 @@ tree* construct(int I, int J)
 		ret->right = right;
 		//get the greater frequency of the two
 		ret->freq = max(right->freq,left->freq);
-		//return greater frequency
+		//return ret tree node
 		return ret;
 	}
 }
