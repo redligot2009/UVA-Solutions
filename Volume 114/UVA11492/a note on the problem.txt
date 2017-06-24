@@ -1,0 +1,4 @@
+Was getting TLE initially due to using pairs instead of a struct with custom comparator.
+Turned out creating a custom edge struct was much faster than using pairs.
+If you're getting TLE, try it.
+Plus, it's also much less of a pain to write
