@@ -154,7 +154,8 @@ int main() {
 			j--;
 			//Because the input is given in increasing order,
 			//it is not possible for a different element to exist within 
-			//the range of i to j
+			//the range of i to j if the elements at those positions are
+			//the same.
 			if(A[i] == A[j])
 			{
 				//Therefore, if the elements at i and j are the same,
