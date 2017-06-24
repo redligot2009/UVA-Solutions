@@ -190,7 +190,9 @@ int main() {
 			//(j-start[A[j]]) is simply the difference between the end position,
 			//and the position of the first occurence of A[j], and adding 1 to this
 			//gives us the amount of occurences of A[j] between the range of i to j.
-			//It will always be at least 1
+			//It will always be at least 1, because if there exists a unique element
+			//at position j, then the start position is either at j itself or at a
+			//previous position from j.
 			
 			//If # of occurences of A[i] > # of occurences of A[j]
 			if(v1 > v2)
@@ -217,6 +219,11 @@ int main() {
 			//values from that space in between r1 and r2.
 			if(r1 <= r2)
 			{
+				//If this condition is passed, then it is guaranteed that all elements 
+				//within range r1 to r2 never gets cut off at any point.
+				//Which is why we can simply perform range max query on the segment tree
+				//created earlier from the complete total frequencies of each element
+				//and getting the frequency of the element which was most frequent.
 				int val = root->query(r1,r2);
 				if(val > ans)
 				{
