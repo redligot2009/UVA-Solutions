@@ -2,3 +2,5 @@ Was getting TLE initially due to using pairs instead of a struct with custom com
 Turned out creating a custom edge struct was much faster than using pairs.
 If you're getting TLE, try it.
 Plus, it's also much less of a pain to write
+Another thing to note is that it is possible for the shortest path to a node to be impossible,
+however, a longer path with a different first character may yet exist.
