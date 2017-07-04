@@ -80,6 +80,10 @@ int main() {
 			{
 				continue;
 			}
+			if(u == to_key)
+			{
+				break;
+			}
 			//cout << v << " " << s << endl;
 			for (auto it = edge_string[u].begin(); it != edge_string[u].end(); it++)
 			{
